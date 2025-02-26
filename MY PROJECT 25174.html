@@ -1,0 +1,1353 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   MVITA TECHNICAL TRAINING INSTITUTE APPLICATIN FORM
+  </title>
+  <style>
+    .dark-mode {
+        background-color: #121212;
+        color: white;
+    }
+    .dark-mode input, .dark-mode select, .dark-mode textarea {
+        background: #333;
+        color: white;
+        border: 1px solid #555;
+    }
+    .dark-mode button {
+        background: #007bff;
+        color: white;
+    }
+</style>
+ 
+                                           <!-- Language Switcher -->
+<select id="language-switcher">
+    <option value="auto">Auto Detect</option>
+    <option value="en">English</option>
+    <option value="sw">Kiswahili</option>
+    <option value="fr">Français</option>
+    <option value="es">Español</option>
+    <option value="de">Deutsch</option>
+    <option value="zh">中文 (Chinese)</option>
+    <option value="ar">العربية (Arabic)</option>
+    <option value="hi">हिन्दी (Hindi)</option>
+    <option value="ru">Русский (Russian)</option>
+    <option value="pt">Português</option>
+    <option value="ja">日本語 (Japanese)</option>
+    <option value="it">Italiano</option>
+    <option value="tr">Türkçe</option>
+    <option value="nl">Nederlands</option>
+    <option value="ko">한국어 (Korean)</option>
+    <option value="pl">Polski</option>
+    <option value="vi">Tiếng Việt</option>
+    <option value="th">ไทย (Thai)</option>
+    <option value="he">עברית (Hebrew)</option>
+    <option value="ur">اردو (Urdu)</option>
+    <option value="bn">বাংলা (Bengali)</option>
+    <option value="el">Ελληνικά (Greek)</option>
+    <option value="hu">Magyar (Hungarian)</option>
+    <option value="ro">Română (Romanian)</option>
+    <option value="cs">Čeština (Czech)</option>
+    <option value="sk">Slovenčina (Slovak)</option>
+    <option value="bg">Български (Bulgarian)</option>
+    <option value="sr">Српски (Serbian)</option>
+    <option value="hr">Hrvatski (Croatian)</option>
+    <option value="id">Bahasa Indonesia</option>
+    <option value="ms">Bahasa Melayu</option>
+    <option value="ta">தமிழ் (Tamil)</option>
+    <option value="mr">मराठी (Marathi)</option>
+    <option value="fa">فارسی (Persian)</option>
+    <option value="et">Eesti (Estonian)</option>
+    <option value="lv">Latviešu (Latvian)</option>
+    <option value="lt">Lietuvių (Lithuanian)</option>
+    <option value="sl">Slovenščina (Slovenian)</option>
+    <option value="fi">Suomi (Finnish)</option>
+    <option value="sv">Svenska (Swedish)</option>
+    <option value="da">Dansk (Danish)</option>
+    <option value="no">Norsk (Norwegian)</option>
+    <option value="uk">Українська (Ukrainian)</option>
+    <option value="ka">ქართული (Georgian)</option>
+    <option value="hy">Հայերեն (Armenian)</option>
+    <option value="az">Azərbaycan (Azerbaijani)</option>
+</select>   
+                             
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <link href="styles.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css" rel="stylesheet"/>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js">
+  </script>
+                <script>
+                    let canvas = document.getElementById("signature-pad");
+                    let ctx = canvas.getContext("2d");
+                    let drawing = false;
+                
+                    // Start drawing
+                    canvas.addEventListener("touchstart", startDrawing, false);
+                    canvas.addEventListener("mousedown", startDrawing, false);
+                
+                    // Draw movement
+                    canvas.addEventListener("touchmove", draw, false);
+                    canvas.addEventListener("mousemove", draw, false);
+                
+                    // Stop drawing
+                    canvas.addEventListener("touchend", stopDrawing, false);
+                    canvas.addEventListener("mouseup", stopDrawing, false);
+                    canvas.addEventListener("mouseout", stopDrawing, false);
+                
+                    function startDrawing(event) {
+                        drawing = true;
+                        ctx.beginPath();
+                        let pos = getPosition(event);
+                        ctx.moveTo(pos.x, pos.y);
+                        event.preventDefault();
+                    }
+                
+                    function draw(event) {
+                        if (!drawing) return;
+                        let pos = getPosition(event);
+                        ctx.lineTo(pos.x, pos.y);
+                        ctx.stroke();
+                        event.preventDefault();
+                    }
+                
+                    function stopDrawing() {
+                        drawing = false;
+                        saveSignature();
+                    }
+                
+                    function getPosition(event) {
+                        let rect = canvas.getBoundingClientRect();
+                        let x, y;
+                
+                        if (event.touches) {
+                            x = event.touches[0].clientX - rect.left;
+                            y = event.touches[0].clientY - rect.top;
+                        } else {
+                            x = event.clientX - rect.left;
+                            y = event.clientY - rect.top;
+                        }
+                        return { x, y };
+                    }
+                
+                    function saveSignature() {
+                        let signatureData = canvas.toDataURL(); // Convert to image data
+                        document.getElementById("signature-data").value = signatureData;
+                    }
+                
+                    function clearSignature() {
+                        ctx.clearRect(0, 0, canvas.width, canvas.height);
+                        document.getElementById("signature-data").value = "";
+                    }
+                </script>
+                                 <script>
+                                    document.addEventListener("DOMContentLoaded", function () {
+                                        const toggleButton = document.getElementById("theme-toggle");
+                                
+                                        // Check and apply saved mode
+                                        if (localStorage.getItem("darkMode") === "enabled") {
+                                            document.body.classList.add("dark-mode");
+                                        }
+                                
+                                        toggleButton.addEventListener("click", function () {
+                                            document.body.classList.toggle("dark-mode");
+                                
+                                            // Save user preference
+                                            if (document.body.classList.contains("dark-mode")) {
+                                                localStorage.setItem("darkMode", "enabled");
+                                            } else {
+                                                localStorage.setItem("darkMode", "disabled");
+                                            }
+                                        });
+                                    });
+                                </script>
+                                
+                             
+ </head>
+ <body>
+    <button id="theme-toggle">Toggle Dark Mode</button>
+  <script>
+   document.addEventListener("DOMContentLoaded", function() {
+        let userName = localStorage.getItem("full_name");
+        if (userName) {
+            let welcomeMsg = document.createElement("h2");
+            welcomeMsg.textContent = "Welcome back, " + userName + "!";
+            document.body.insertBefore(welcomeMsg, document.body.firstChild);
+        }
+    });
+  </script>
+                     <script>
+                        document.addEventListener("DOMContentLoaded", function () {
+                            const translations = {
+                                en: { welcome: "Welcome to MTTI", apply_now: "Apply for admission now!", button_apply: "Apply Now" },
+                                sw: { welcome: "Karibu MTTI", apply_now: "Omba kujiunga sasa!", button_apply: "Omba Sasa" },
+                                fr: { welcome: "Bienvenue à MTTI", apply_now: "Postulez dès maintenant!", button_apply: "Postuler Maintenant" },
+                                es: { welcome: "Bienvenido a MTTI", apply_now: "Solicite su admisión ahora!", button_apply: "Solicitar Ahora" },
+                                de: { welcome: "Willkommen bei MTTI", apply_now: "Jetzt bewerben!", button_apply: "Jetzt Bewerben" },
+                                zh: { welcome: "欢迎来到 MTTI", apply_now: "立即申请!", button_apply: "立即申请" },
+                                ar: { welcome: "مرحبًا بك في MTTI", apply_now: "قدم طلبك الآن!", button_apply: "قدم الآن" },
+                                hi: { welcome: "MTTI में आपका स्वागत है", apply_now: "अभी आवेदन करें!", button_apply: "अभी आवेदन करें" },
+                                ru: { welcome: "Добро пожаловать в MTTI", apply_now: "Подайте заявку сейчас!", button_apply: "Подать заявку" },
+                                pt: { welcome: "Bem-vindo ao MTTI", apply_now: "Inscreva-se agora!", button_apply: "Inscrever-se" }
+                            };
+                        
+                            const languageSwitcher = document.getElementById("language-switcher");
+                        
+                            function updateLanguage(lang) {
+                                document.querySelectorAll("[data-lang]").forEach(element => {
+                                    let key = element.getAttribute("data-lang");
+                                    if (translations[lang] && translations[lang][key]) {
+                                        element.textContent = translations[lang][key];
+                                    }
+                                });
+                                localStorage.setItem("selectedLanguage", lang); // Save preference
+                            }
+                        
+                            languageSwitcher.addEventListener("change", function () {
+                                let selectedLang = languageSwitcher.value;
+                                if (selectedLang === "auto") {
+                                    selectedLang = navigator.language.slice(0, 2); // Auto-detect browser language
+                                }
+                                updateLanguage(selectedLang);
+                            });
+                        
+                            // Load saved language or auto-detect
+                            let savedLang = localStorage.getItem("selectedLanguage") || "en";
+                            languageSwitcher.value = savedLang;
+                            updateLanguage(savedLang);
+                        });
+                        </script>
+                        
+                                 
+  <script>
+   document.getElementById("google-login").addEventListener("click", function() {
+        alert("Google Login is currently simulated. In real implementation, this will redirect to Google OAuth.");
+    });
+  </script>
+ 
+  
+  <div class="container">
+   <img alt="Mvita Technical Logo" src="LOGO.jpg" style="display:block;margin:0 auto; width: 150px;"/>
+   <h1 style="text-align: center;">
+    Mvita Technical Training Institute Application Form
+   </h1>
+   <form action="submit.php" method="POST">
+    <fieldset>
+     <legend>
+      APPLICANT'S DETAILS
+     </legend>
+     <label>
+      Full Name:
+      <input name="full_name" required="" type="text"/>
+     </label>
+     <label>
+      Title:
+      <select name="title" required="">
+       <option value="mr">
+        Mr
+       </option>
+       <option value="mrs">
+        Mrs
+       </option>
+       <option value="ms">
+        Ms
+       </option>
+      </select>
+     </label>
+     <label>
+      Gender:
+      <input name="gender" required="" type="radio" value="male"/>
+      Male
+      <input name="gender" required="" type="radio" value="female"/>
+      Female
+      <input name="gender" required="" type="radio" value="Lesbian"/>
+      Lesbian
+      <input name="gender" required="" type="radio" value="Gay"/>
+      Gay
+      <input name="gender" required="" type="radio" value="Bisexual"/>
+      Bisexual 
+      <input name="gender" required="" type="radio" value="transgender"/>
+      transgender
+      <input name="gender" required="" type="radio" value="Queer"/>
+      Queer
+      <input name="gender" required="" type="radio" value="not applicable"/>
+      Not applicable
+     </label>
+     <br/>
+     <br/>
+     <label>
+      Date of Birth:
+      <input name="dob" required="" type="date"/>
+     </label>
+     <label>
+      Nationality:
+      <input name="nationality" required="" type="text"/>
+     </label>
+     <label>
+      ID/Passport No:
+      <input name="id_number" required="" type="text"/>
+     </label>
+    </fieldset>
+    <fieldset>
+     <legend>
+      PERMANENT ADDRESS
+     </legend>
+     <label>
+      P.O. Box:
+      <input name="address" required="" type="text"/>
+     </label>
+     <label>
+      Email:
+      <input name="email" required="" type="email"/>
+     </label>
+     <label>
+      Phone Number:
+      <input class="phone-input" id="phone" name="phone" required="" type="tel"/>
+     </label>
+    </fieldset>
+    <fieldset>
+     <legend>
+      PARENT/GUARDIAN INFORMATION
+     </legend>
+     <label>
+      Father's Name:
+      <input name="father_name" type="text"/>
+     </label>
+     <label>
+      Father's Phone:
+      <input class="phone-input" id="father_phone" name="father_phone" type="tel"/>
+     </label>
+     <label>
+      Mother's Name:
+      <input name="mother_name" type="text"/>
+     </label>
+     <label>
+      Mother's Phone:
+      <input class="phone-input" id="mother_phone" name="mother_phone" type="tel"/>
+     </label>
+    </fieldset>
+    
+    <fieldset>
+     <legend>
+      NEXT OF KIN INFORMATION
+     </legend>
+     <label>
+      Full Name:
+      <input name="next_of_kin_name" required="" type="text"/>
+     </label>
+     <label>
+      Relationship:
+      <input name="next_of_kin_relationship" required="" type="text"/>
+     </label>
+     <label>
+      Contact Number:
+      <input class="phone-input" name="next_of_kin_phone" required="" type="tel"/>
+     </label>
+     <label>
+      Address:
+      <input name="next_of_kin_address" type="text"/>
+     </label>
+    </fieldset>
+    <fieldset>
+     <legend>
+      DEMOGRAPHICS
+     </legend>
+     <label>
+      Religion:
+      <select name="religion" required="">
+       <option value="christianity">
+        Christianity
+       </option>
+       <option value="islam">
+        Islam
+       </option>
+       <option value="hinduism">
+        Hinduism
+       </option>
+       <option value="buddhism">
+        Buddhism
+       </option>
+       <option value="other">
+        Other
+       </option>
+      </select>
+     </label>
+     <label>
+      Citizenship Status:
+      <select name="citizenship_status" required="">
+       <option value="native">
+        Native
+       </option>
+       <option value="permanent_resident">
+        Permanent Resident
+       </option>
+       <option value="refugee">
+        Refugee
+       </option>
+       <option value="other">
+        Other
+       </option>
+      </select>
+     </label>
+     <label>
+      Income Level:
+      <select name="income_level" required="">
+       <option value="low">
+        Low
+       </option>
+       <option value="middle">
+        Middle
+       </option>
+       <option value="high">
+        High
+       </option>
+      </select>
+     </label>
+     <label>
+      Employment Status:
+      <select name="employment_status" required="">
+       <option value="employed">
+        Employed
+       </option>
+       <option value="self_employed">
+        Self-Employed
+       </option>
+       <option value="unemployed">
+        Unemployed
+       </option>
+       <option value="student">
+        Student
+       </option>
+      </select>
+     </label>
+     <label>
+      Residential Area:
+      <select name="residential_area" required="">
+       <option value="urban">
+        Urban
+       </option>
+       <option value="rural">
+        Rural
+       </option>
+      </select>
+     </label>
+    </fieldset>
+    <fieldset>
+     <legend>
+      BIODRAPHICAL INFORMATION
+     </legend>
+     <label>
+      Marital Status:
+      <select name="marital_status" required="">
+       <option value="single">
+        Single
+       </option>
+       <option value="married">
+        Married
+       </option>
+       <option value="divorced">
+        Divorced
+       </option>
+       <option value="widowed">
+        Widowed
+       </option>
+      </select>
+     </label>
+     <label>
+      Home Language:
+      <select name="home_language" required="">
+       <option value="english">
+        English
+       </option>
+       <option value="swahili">
+        Swahili
+       </option>
+       <option value="french">
+        French
+       </option>
+       <option value="german">
+        German
+       </option>
+       <option value="other">
+        Other
+       </option>
+      </select>
+     </label>
+     <label>
+      Ethnic Group:
+      <select name="ethnic_group" required="">
+       <option value="african">
+        African
+       </option>
+       <option value="asian">
+        Asian
+       </option>
+       <option value="caucasian">
+        Caucasian
+       </option>
+       <option value="hispanic">
+        Hispanic
+       </option>
+       <option value="other">
+        Other
+       </option>
+      </select>
+     </label>
+    </fieldset>
+    <fieldset>
+     <legend>
+      EDUCATION BACKGROUND
+     </legend>
+     <label>
+      Secondary School Attended:
+      <input name="high_school" required="" type="text"/>
+     </label>
+     <label for="mean_grade">
+      Mean Grade:
+     </label>
+     <select id="mean_grade" name="mean_grade" required="">
+      <option value="">
+       Select Grade
+      </option>
+      <option value="A">
+       A
+      </option>
+      <option value="A-">
+       A-
+      </option>
+      <option value="B+">
+       B+
+      </option>
+      <option value="B">
+       B
+      </option>
+      <option value="B-">
+       B-
+      </option>
+      <option value="C+">
+       C+
+      </option>
+      <option value="C">
+       C
+      </option>
+      <option value="C-">
+       C-
+      </option>
+      <option value="D+">
+       D+
+      </option>
+      <option value="D">
+       D
+      </option>
+      <option value="D-">
+       D-
+      </option>
+      <option value="E">
+       E
+      </option>
+     </select>
+    </fieldset>
+    <fieldset>
+     <legend>
+      EDUCATIONAL PLANS
+     </legend>
+     <label>
+      Programme Level:
+      <select name="programme_level" required="">
+       <option value="doctorate">
+        Doctorate
+       </option>
+       <option value="masters">
+        masters
+       </option>
+       <option value="bachelor">
+        Bachelor
+       </option>
+       <option value="diploma">
+        Diploma
+       </option>
+       <option value="certificate">
+        Certificate
+       </option>
+      </select>
+     </label>
+     <label>
+      Programme Name:
+      <input name="programme_name" required="" type="text"/>
+     </label>
+    </fieldset>
+    <fieldset>
+     <legend>
+      AI-POWERED COURSE RECOMMENDATION
+     </legend>
+     <p>
+      Answer the following questions to get the best course suggestion for you:
+     </p>
+     <label>
+      What are your main interests?
+     </label>
+     <select id="interests" name="interests" required="">
+      <option value="technology">
+       Technology &amp; Computing
+      </option>
+      <option value="health">
+       Health &amp; Medicine
+      </option>
+      <option value="business">
+       Business &amp; Finance
+      </option>
+      <option value="engineering">
+       Engineering &amp; Mechanics
+      </option>
+      <option value="arts">
+       Arts &amp; Design
+      </option>
+     </select>
+     <label>
+      WHAT ARE YOUR STRONGEST SKILL?
+     </label>
+     <select id="skills" name="skills" required="">
+      <option value="problem_solving">
+       Problem Solving &amp; Critical Thinking
+      </option>
+      <option value="creativity">
+       Creativity &amp; Innovation
+      </option>
+      <option value="people_skills">
+       People &amp; Communication Skills
+      </option>
+      <option value="analytical">
+       Analytical &amp; Research Skills
+      </option>
+     </select>
+     <label>
+      WHAT IS YOUR IDEAL CAREER GOAL?
+     </label>
+     <select id="career_goal" name="career_goal" required="">
+      <option value="developer">
+       Software Developer / Engineer
+      </option>
+      <option value="doctor">
+       Doctor / Medical Practitioner
+      </option>
+      <option value="entrepreneur">
+       Entrepreneur / Business Leader
+      </option>
+      <option value="mechanic">
+       Mechanical / Civil Engineer
+      </option>
+      <option value="designer">
+       Graphic Designer / Creative Artist
+      </option>
+     </select>
+     <button onclick="recommendCourse()" type="button">
+      Get Course Recommendation
+     </button>
+     <p id="course_recommendation">
+     </p>
+    </fieldset>
+    <fieldset>
+     <legend>
+      FINANCING OF STUDIES
+     </legend>
+     <label>
+      Source of Funding:
+      <select name="funding_source" required="">
+       <option value="self">
+        Self
+       </option>
+       <option value="parent">
+        Parent/Guardian
+       </option>
+       <option value="government">
+        Government/HELB
+       </option>
+       <option value="other">
+        Other Sponsorship
+       </option>
+      </select>
+     </label>
+    </fieldset>
+    <fieldset>
+     <legend>
+      HOBBIES
+     </legend>
+     <label>
+      List your hobbies:
+     </label>
+     <textarea name="hobbies" placeholder="E.g., Reading, Swimming, Traveling" rows="4"></textarea>
+    </fieldset>
+    <fieldset>
+     <legend>
+      DISABILITY INFORMATION
+     </legend>
+     <label>
+      Do you have any form of disability?
+     </label>
+     <input name="disability" required="" type="radio" value="yes"/>
+     Yes
+     <input name="disability" required="" type="radio" value="no"/>
+     No
+     <br/>
+     <label>
+      If yes, specify:
+     </label>
+     <select name="disability_type">
+      <option value="">
+       Select Disability Type
+      </option>
+      <option value="visual">
+       Visual Impairment
+      </option>
+      <option value="hearing">
+       Hearing Impairment
+      </option>
+      <option value="physical">
+       Physical Disability
+      </option>
+      <option value="learning">
+       Learning Disability
+      </option>
+      <option value="other">
+       Other (Specify Below)
+      </option>
+     </select>
+     <textarea name="disability_details" placeholder="Provide additional details if needed" rows="3"></textarea>
+    </fieldset>
+    <fieldset>
+     <legend>
+      HOW DID YOU LEARN ABOUT MVITA TECHNICAL TREINING INSTITUTE?
+     </legend>
+     <label>
+      <select name="source_of_information" required="">
+       <option value="">
+        Select an Option
+       </option>
+       <option value="friends">
+        Friends/Family
+       </option>
+       <option value="social_media">
+        Social Media
+       </option>
+       <option value="advertisements">
+        Advertisements
+       </option>
+       <option value="website">
+        University Website
+       </option>
+       <option value="events">
+        Career Fair/Events
+       </option>
+       <option value="other">
+        Other (Specify Below)
+       </option>
+      </select>
+     </label>
+     <textarea name="other_source" placeholder="If other, please specify" rows="3"></textarea>
+    </fieldset>
+    <fieldset>
+     <legend>
+      APPLICATION LIST
+     </legend>
+     <label>
+      Preferred Course:
+     </label>
+     <select name="preferred_course" required="">
+      <option value="">
+       Select a Course
+      </option>
+      <option value="Computer Science">
+       Computer Science
+      </option>
+      <option value="Information Technology">
+       Information Technology
+      </option>
+      <option value="Business Administration">
+       Business Administration
+      </option>
+      <option value="Nursing">
+       Nursing
+      </option>
+      <option value="Engineering">
+       Engineering
+      </option>
+      <option value="Education">
+       Education
+      </option>
+      <option value="Law">
+       Law
+      </option>
+      <option value="Medicine">
+       Medicine
+      </option>
+      <option value="Pharmacy">
+       Pharmacy
+      </option>
+      <option value="Architecture">
+       Architecture
+      </option>
+      <option value="Agriculture">
+       Agriculture
+      </option>
+      <option value="Environmental Science">
+       Environmental Science
+      </option>
+      <option value="Hospitality &amp; Tourism">
+       Hospitality &amp; Tourism
+      </option>
+      <option value="Journalism &amp; Mass Communication">
+       Journalism &amp; Mass Communication
+      </option>
+      <option value="Psychology">
+       Psychology
+      </option>
+      <option value="Accounting &amp; Finance">
+       Accounting &amp; Finance
+      </option>
+      <option value="Graphic Design">
+       Graphic Design
+      </option>
+      <option value="Fashion &amp; Design">
+       Fashion &amp; Design
+      </option>
+     </select>
+    </fieldset>
+    <fieldset>
+     <legend>
+      SCHOLARSHUP AND ACCOUNT FINANCIAL CALCULATOR
+     </legend>
+     <label>
+      Mean Grade:
+     </label>
+     <select id="mean_grade" name="mean_grade" required="">
+      <option value="A">
+       A
+      </option>
+      <option value="A-">
+       A-
+      </option>
+      <option value="B+">
+       B+
+      </option>
+      <option value="B">
+       B
+      </option>
+      <option value="B-">
+       B-
+      </option>
+      <option value="C+">
+       C+
+      </option>
+      <option value="C">
+       C
+      </option>
+      <option value="C-">
+       C-
+      </option>
+      <option value="D+">
+       D+
+      </option>
+      <option value="D">
+       D
+      </option>
+      <option value="D-">
+       D-
+      </option>
+      <option value="E">
+       E
+      </option>
+     </select>
+     <label>
+      Household Income level:
+     </label>
+     <select id="income_level" name="income_level" required="">
+      <option value="low">
+       Low
+      </option>
+      <option value="middle">
+       Middle
+      </option>
+      <option value="high">
+       High
+      </option>
+     </select>
+     <label>
+      Extracurricular Activities:
+     </label>
+     <select id="extracurricular" name="extracurricular" required="">
+      <option value="none">
+       None
+      </option>
+      <option value="some">
+       Some
+      </option>
+      <option value="high">
+       High Level Participation
+      </option>
+     </select>
+     <button onclick="calculateScholarship()" type="button">
+      Check Scholarship Eligibility
+     </button>
+     <p id="scholarship_result">
+     </p>
+    </fieldset>
+    <fieldset>
+     <legend>
+      DECLARATION
+     </legend>
+     <p>
+      I hereby certify that the information given in this application is correct and completed&gt;
+      <label>
+       Signature:
+       <input name="signature" required="" style="width: 100%; height: 50px;" type="text"/>
+      </label>
+      <label>
+       Date:
+       <input name="date" required="" type="date"/>
+      </label>
+     </p>
+    </fieldset>
+    <fieldset>
+     <legend>
+      APPLICANT'S DETAILS
+     </legend>
+     <label>
+      Full Name:
+      <input id="full_name" name="full_name" required="" type="text"/>
+     </label>
+     <label>
+      Email:
+      <input id="email" name="email" required="" type="email"/>
+     </label>
+     <label>
+      Phone Number:
+      <input class="phone-input" id="phone" name="phone" required="" type="tel"/>
+     </label>
+    </fieldset>
+    <fieldset>
+     <legend>
+      GAMIFICATION &amp; REWARDS
+     </legend>
+     <p>
+      Earn badges for completing your application and referring friends!
+     </p>
+     <p>
+      <strong>
+       Badges Available:
+      </strong>
+     </p>
+     <ul>
+      <li>
+       <span id="badge-early" style="display: none;">
+        🏆 Application Pro - Completed Early!
+       </span>
+      </li>
+      <li>
+       <span id="badge-extracurricular" style="display: none;">
+        🌟 Future Leader - Added Extracurricular Activities!
+       </span>
+      </li>
+      <li>
+       <span id="badge-referral" style="display: none;">
+        🎁 Referral Champion - Referred a Friend!
+       </span>
+      </li>
+     </ul>
+     <p>
+      <strong>
+       Rewards:
+      </strong>
+      Students who earn badges may receive discounts on tuition or university merchandise.
+     </p>
+    </fieldset>
+    <fieldset>
+     <legend>
+      UNIVERSITY HOUSING &amp; ACCOMODATION MATCHER
+     </legend>
+     <label>
+      Preferred Accommodation Type:
+     </label>
+     <select id="accommodation_type" name="accommodation_type" required="">
+      <option value="on-campus">
+       On-Campus Hostel
+      </option>
+      <option value="private">
+       Private Apartment
+      </option>
+      <option value="shared">
+       Shared Apartment
+      </option>
+      <option value="budget">
+       Budget Hostel
+      </option>
+     </select>
+     <label>
+      Budget Range (per month in KES):
+     </label>
+     <select id="budget" name="budget" required="">
+      <option value="below_5000">
+       Below 5000
+      </option>
+      <option value="5000_10000">
+       5000 - 10,000
+      </option>
+      <option value="10000_20000">
+       10,000 - 20,000
+      </option>
+      <option value="above_20000">
+       Above 20,000
+      </option>
+     </select>
+     <label>
+      Roommate Preferences (if shared):
+     </label>
+     <select id="roommate_preferences" name="roommate_preferences">
+      <option value="quiet">
+       Quiet &amp; Reserved
+      </option>
+      <option value="social">
+       Social &amp; Outgoing
+      </option>
+      <option value="no_preference">
+       No Preference
+      </option>
+     </select>
+     <button onclick="matchAccommodation()" type="button">
+      Find Housing Options
+     </button>
+     <p id="housing_result">
+     </p>
+    </fieldset>
+    <fieldset>
+     <legend>
+      Exclusive Pre-Admission Discounts &amp; Benefits
+     </legend>
+     <p>
+      Early applicants enjoy special perks!
+     </p>
+     <ul>
+      <li>
+       🎓
+       <strong>
+        Tuition Discounts:
+       </strong>
+       Early registration can earn you up to 20% off tuition fees.
+      </li>
+      <li>
+       📚
+       <strong>
+        Free Online Courses:
+       </strong>
+       Access exclusive university courses before the semester begins.
+      </li>
+      <li>
+       🎁
+       <strong>
+        Merchandise Rewards:
+       </strong>
+       Successful applicants receive MKU branded hoodies, notebooks, and more!
+      </li>
+     </ul>
+     <button onclick="checkDiscountEligibility()" type="button">
+      Check Eligibility
+     </button>
+     <p id="discount_result">
+     </p>
+    </fieldset>
+    <fieldset>
+     <legend>
+      Attestation
+     </legend>
+     <p>
+      I, the undersigned applicant, confirm that all the information provided in this application form is accurate, true, and complete to the best of my knowledge. I understand that any false, misleading, or incomplete information may result in the rejection of my application or immediate dismissal from the university if already admitted. I acknowledge that the university reserves the right to verify any information provided.
+     </p>
+     <p>
+      I commit to abide by all the rules, regulations, and policies of Mount Kenya University. I understand that my admission is subject to compliance with the academic and disciplinary requirements of the institution. I further understand that my conduct and performance will be evaluated continuously, and failure to meet the expected standards may lead to disciplinary actions, including suspension or expulsion.
+     </p>
+     <p>
+      I acknowledge that Mount Kenya University has the authority to share necessary information about my admission status and academic progress with relevant government bodies, sponsors, and parents/guardians where applicable.
+     </p>
+     <p>
+      I also confirm that I have read and understood all financial obligations related to my studies and agree to settle any outstanding fees within the stipulated deadlines. Failure to meet these obligations may result in penalties, withholding of academic transcripts, or cancellation of admission.
+     </p>
+     <p>
+      By signing below, I affirm my commitment to the university and declare that I fully understand the contents of this attestation.
+     </p>
+     <p>
+      <strong>
+       Instruction:
+      </strong>
+      Please ensure you sign your application before returning it to the university.
+     </p>
+     <label>
+      Signature:
+      <input name="signature" required="" style="width: 100%; height: 50px;" type="text"/>
+     </label>
+     <label>
+      Date:
+      <input name="date" required="" type="date"/>
+     </label>
+    </fieldset>
+    <fieldset>
+     <legend>
+      APPLICATION CHECKLIST
+     </legend>
+     <ol>
+      <li>
+       Duly filled and signed application form.
+      </li>
+      <li>
+       Copies of all academic certificates (Secondary school certificates; Bachelors, Diplomas &amp; Certificate level certificates and transcripts).
+      </li>
+      <li>
+       One (1) recent passport size photograph (write your name on reverse side).
+      </li>
+      <li>
+       Copy of national I.D/Passport/Birth Certificate.
+      </li>
+      <li>
+       An official translation of academic records (where language of study is not English).
+      </li>
+     </ol>
+     <p>
+      <strong>
+       Application Fee Payment Methods:
+      </strong>
+     </p>
+     <ul>
+      <li>
+       Paybill Number: 4032751 Account: TC25[INDEX NUMBER] (Use National ID/ Passport Number / Birth Certificate number as account code).
+      </li>
+      <li>
+        All fee payment is to be made either by M-pesa,cheque or direct bank deposit
+      </li>
+      <li>
+        All deposit slips are to be submitted to the accounts office to confirmation of payment
+      </li>
+      <li>
+       Bank I&M      ACCOUNT NUMBER:02104453406350 [Include your registration number in the payslip]
+      </li>
+      <li>
+       Cheques are to be drawn to MVITA TECHNICAL TRAINING INSTITUTE and are to be handed, delivered to the accounts office by hand and signed upon delivering.
+      </li>
+      <li>
+       Co-operative Bank, Thika Branch - 01129279981300.
+      </li>
+     </ul>
+     <p>
+      <em>
+       * Money once paid is not refundable.
+       *All correspondence can be addressed to the numbers and emails limited above.
+      </em>
+     </p>
+    </fieldset>
+    <fieldset>
+     <legend>
+      OFFICIAL USE ONLY
+     </legend>
+     <label>
+      Application/Cheque Number:
+      <input name="application_cheque_number" required="" type="text"/>
+     </label>
+     <label>
+      Application Fees Receipt Number:
+      <input name="application_fee_receipt" required="" type="text"/>
+     </label>
+     <label>
+      Date:
+      <input name="official_use_date" required="" type="date"/>
+     </label>
+     <label>
+      Officer's Name:
+      <input name="officer_name" required="" type="text"/>
+     </label>
+    </fieldset>
+    <button style="width: 100%; height: 50px; font-size: 1.2em;" type="submit">
+     Submit
+    </button>
+   </form>
+  </div>
+  <footer style="text-align: center; margin-top: 20px; font-size: 1.2em;">
+   Contact us:
+   <a href="mailto:info@mtti.ac.ke">
+    info@mtti.ac.ke
+   </a>
+   <br/>
+   MTTI is ISO 9001:2025 Certified
+   <br/>
+   Website:
+   <a href="https://www.mtti.ac.ke">
+    www.mtti.ac.ke
+   </a>
+   
+   <script>
+    function calculateScholarship() {
+                                    let grade = document.getElementsByName('mean_grade')[0].value;
+                                    let income = document.getElementsByName('income_level')[0].value;
+                                    let extra = document.getElementsByName('extracurricular_score')[0].value;
+                                    let result = "You may be eligible for a scholarship!";
+                                    if (income === 'high' && extra === 'none') {
+                                        result = "You may not qualify for financial aid.";
+                                    }
+                                    document.getElementById('scholarship_result').innerText = result;
+                                }
+   </script>
+   <script>
+    function sendNotification(event) {
+                                            event.preventDefault(); // Prevent form submission for demo
+                                            let name = document.getElementById("full_name").value;
+                                            let email = document.getElementById("email").value;
+                                            let phone = document.getElementById("phone").value;
+                                            
+                                            alert("Confirmation email & SMS will be sent to: " + email + " / " + phone);
+                                            console.log("Email Notification Sent to: " + email);
+                                            console.log("SMS Notification Sent to: " + phone);
+                                            
+                                            setTimeout(() => {
+                                                alert("Reminder: Submit any missing documents before the deadline!");
+                                            }, 5000);
+                                        }
+   </script>
+   <script>
+    function launchVRExperience() {
+                                                    let course = document.getElementById("vr_course").value;
+                                                    let vrLink = "#";
+                                                    
+                                                    if (course === "medical") {
+                                                        vrLink = "https://example.com/vr-medical";
+                                                    } else if (course === "engineering") {
+                                                        vrLink = "https://example.com/vr-engineering";
+                                                    } else if (course === "business") {
+                                                        vrLink = "https://example.com/vr-business";
+                                                    } else if (course === "it") {
+                                                        vrLink = "https://example.com/vr-it";
+                                                    } else if (course === "architecture") {
+                                                        vrLink = "https://example.com/vr-architecture";
+                                                    }
+                                                    
+                                                    document.getElementById("vr_result").innerHTML = `Click <a href="${vrLink}" target="_blank">here</a> to enter your VR Course Preview.`;
+                                                }
+   </script>
+   <fieldset>
+    <legend>
+     <b>
+      Applicant's Details
+     </b>
+    </legend>
+    <table>
+     <tr>
+      <td>
+       Full Name:
+      </td>
+      <td>
+       <input id="full_name" name="full_name" required="" type="text"/>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       Email:
+      </td>
+      <td>
+       <input id="email" name="email" required="" type="email"/>
+      </td>
+     </tr>
+     <tr>
+      <td>
+       Phone Number:
+      </td>
+      <td>
+       <input class="phone-input" id="phone" name="phone" required="" type="tel"/>
+      </td>
+     </tr>
+    </table>
+   </fieldset>
+   <div align="center">
+    <button type="submit">
+     Submit Application
+    </button>
+    <button onclick="downloadPDF()" type="button">
+     Download PDF
+    </button>
+   </div>
+   <script>
+    function downloadPDF() {
+                                                                const { jsPDF } = window.jspdf;
+                                                                const doc = new jsPDF();
+                                                    
+                                                                doc.text("Mount Kenya University Application Form", 20, 20);
+                                                                doc.text("Full Name: " + document.getElementById("full_name").value, 20, 40);
+                                                                doc.text("Email: " + document.getElementById("email").value, 20, 50);
+                                                                doc.text("Phone Number: " + document.getElementById("phone").value, 20, 60);
+                                                    
+                                                                doc.save("MKU_Application_Form.pdf");
+                                                            }
+   </script>
+  </footer>
+  <script>
+   document.addEventListener("DOMContentLoaded", function() {
+        let inputs = document.querySelectorAll("input, select, textarea");
+        inputs.forEach(input => {
+            let savedValue = localStorage.getItem(input.name);
+            if (savedValue) input.value = savedValue;
+
+            input.addEventListener("input", function() {
+                localStorage.setItem(input.name, input.value);
+            });
+        });
+    });
+  </script>
+  <script>
+   let logoutTimer;
+    function resetTimer() {
+        clearTimeout(logoutTimer);
+        logoutTimer = setTimeout(() => {
+            alert("You have been logged out due to inactivity.");
+            location.reload();
+        }, 60000); // 1 minute inactivity logout
+    }
+
+    document.addEventListener("mousemove", resetTimer);
+    document.addEventListener("keypress", resetTimer);
+    resetTimer(); // Start the timer initially
+  </script>
+  <fieldset>
+   <legend>
+    Share Your Application Status
+   </legend>
+   <button onclick="shareOnWhatsApp()">
+    Share on WhatsApp
+   </button>
+   <button onclick="shareOnTwitter()">
+    Share on Twitter
+   </button>
+  </fieldset>
+  <script>
+   function shareOnWhatsApp() {
+        let message = "I just submitted my application! Apply now at MTTI.";
+        let url = "https://api.whatsapp.com/send?text=" + encodeURIComponent(message);
+        window.open(url, "_blank");
+    }
+
+    function shareOnTwitter() {
+        let message = "Just applied to MTTI! Excited for the journey ahead. #MTTI #Education";
+        let url = "https://twitter.com/intent/tweet?text=" + encodeURIComponent(message);
+        window.open(url, "_blank");
+    }
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js">
+  </script>
+  <script>
+   document.addEventListener("DOMContentLoaded", function() {
+        let phoneInputs = document.querySelectorAll(".phone-input");
+        phoneInputs.forEach(input => {
+            window.intlTelInput(input, {
+                initialCountry: "ke",
+                separateDialCode: true,
+                utilsScript: "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js"
+            });
+        });
+    });
+  </script>
+ </body>
+</html>
